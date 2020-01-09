@@ -1,0 +1,52 @@
+<div class="container column">
+    
+    <app-header (onSearchText)="onSearchText($event)" [hideCartIcon]="true"></app-header>
+    <div class="row checkout-page-container">
+        
+        <div class="checkout-list">
+            
+            <div *ngFor="let item of filteredItemList" >
+                <app-checkout-product [cartModel]="item"></app-checkout-product>
+                
+            </div>
+            <div class="column" *ngIf="checkoutItemList.length==0">
+                <h2 class="no-data-found" >Cart is Empty</h2>
+                <button class="apply-button" type="text" (click)="navigateToHome()">Shop Now</button>
+                
+            </div>
+            <h2  *ngIf="checkoutItemList.length!=0 && filteredItemList.length==0" class="no-data-found" >No products found</h2>
+            
+        </div>
+        
+        <div  *ngIf="checkoutItemList.length!=0" class="price-details">
+            
+            <div class="price-detail-heading">
+                <h4>PRICE DETAILS</h4>
+            </div>
+            
+            <div class="row price-calc">
+                
+                <span>Price ( {{checkoutItemList.length}} ) item :</span>
+                <span>&#8377;{{getTotalAmount("Price")}}</span>
+            </div>
+            
+            <div class="row price-calc">
+                
+                <span>Discount :</span>
+                <span>&#8377;{{getTotalAmount("Discount")}}</span>
+                
+            </div>
+            
+            <div class="row price-total">
+                
+                <span>Total Payable :</span>
+                <span>&#8377;{{getTotalAmount("Payable")}}</span>
+                
+            </div>            
+        </div>
+        
+    </div>
+    
+    <div  class="footer"><app-footer></app-footer></div>
+    
+</div>

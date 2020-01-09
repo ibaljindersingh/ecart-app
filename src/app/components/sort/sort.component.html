@@ -1,0 +1,67 @@
+<div class="sort-content row"> 
+    
+    <div class="row desktop-sort">
+        <h4 >Sort By</h4>
+        <div class="tab">
+            <button class="tablinks" [ngClass]="{'active': sortType=='high-low'}" (click)="updateSort($event, 'high-low')">Price -- High Low</button>
+            <button class="tablinks"  [ngClass]="{'active': sortType=='low-high'}" (click)="updateSort($event, 'low-high')">Price -- Low High</button>
+            <button class="tablinks"  [ngClass]="{'active': sortType=='discount'}" (click)="updateSort($event, 'discount')">Discount</button>
+        </div>
+    </div>
+    
+    <div class="row mobile-sort">
+        
+        <div class="row sort" (click)="openSortPopUp()">
+            <fa-icon class="sort-icon" [icon]="faSort"></fa-icon>
+            
+            <h4 >Sort By</h4>
+            
+        </div>
+        <div class="row filter" (click)="openfilters()">
+            <fa-icon class="filter-icon" [icon]="faFilter"></fa-icon>
+            
+            <h4 >Filter</h4>
+            
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="sort-modal" class="sortModal">
+        
+        <!-- Modal content -->
+        <div class="sortModalContent">
+            <div class="column">
+                <h4 class="pl-10">Sort Options</h4>
+                <div >
+                    <input id="rb_high_low" class="p-10" type="radio" [(ngModel)]="sortType" name="sort-radio" value="high-low" (click)="updateSortRadio($event, 'high-low')">Price -- High Low<br>
+                    <input id="rb_low_high" class="p-10" type="radio" [(ngModel)]="sortType" name="sort-radio" value="low-high" (click)="updateSortRadio($event, 'low-high')">Price -- Low High<br>
+                    <input id="rb_discount" class="p-10" type="radio" [(ngModel)]="sortType" name="sort-radio" value="discount" (click)="updateSortRadio($event, 'discount')">Discount<br>
+                </div>
+                <div class="row pop-up-buttons-wrapper">
+                    
+                    <div class="pop-up-cancel-button">
+                        <button class="pop-up-buttons" (click)="dismissSortPopup()">Cancel</button>
+                        
+                    </div>
+                    <div class="pop-up-apply-button">
+                        <button class="pop-up-buttons" (click)="applySort()">Apply</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- The Modal -->
+    <div id="filter-modal" class="filterModal">
+        
+        <!-- Modal content -->
+        <div class="filterModalContent">
+            <app-filter (onFilterChanged)="onFilterChanged($event)">
+                
+                
+            </app-filter>        
+        </div>
+        
+    </div>
+</div>

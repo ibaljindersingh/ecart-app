@@ -1,0 +1,35 @@
+<div class="item-content">
+    
+    <div class="item-img">
+        <img src="{{cartModel.img_url}}" height="150px" width="100%"/>
+    </div>
+    
+    <div class="row item-details">
+        <div class="item-desc">
+            <div class="item-name">
+                
+                {{cartModel.name}}
+            </div>
+            
+            <div class="price-details">
+                <span class="item-sp">&#8377;{{cartModel.selling_price}} </span>
+                <span class="item-price">&#8377;{{cartModel.price}} </span>
+                <span class="item-discount">{{cartModel.discount}} % Off </span>
+            </div>
+            
+            
+        </div>
+        
+        <div class="qty-box">
+            <button class="qty-buttons" type="text" (click)="subtract()" ><fa-icon [icon]="faMinusCircle"></fa-icon></button>
+            <input class="qty-input" type="text" (keyup)="onQtyChange($event)" value="{{cartModel.quantity}}"/>
+            <button class="qty-buttons" type="text" (click)="add()" ><fa-icon [icon]="faPlusCircle"></fa-icon></button>
+            
+        </div>
+        
+        <div class="item-remove" (click)="removeProduct()">
+            
+            REMOVE
+        </div>
+    </div>
+</div>

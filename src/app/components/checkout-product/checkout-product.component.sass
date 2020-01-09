@@ -1,0 +1,71 @@
+.item-content
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2)
+  border: 1px solid #ccc
+  border-radius: 3px
+  height:150px
+  padding: 20px
+  display: flex
+  flex-direction: row
+  margin-bottom: 10px
+
+.item-details
+    flex:70%
+.qty-box
+    padding: 5px
+    border-radius: 50px 50px 50px 50px
+    text-align: center
+    align-self: center
+    flex: 20%
+
+.item-desc
+    flex: 30%
+    padding: 10px
+.item-name
+    padding-bottom: 10px
+
+.price-details
+    text-align: justify
+    text-justify: auto
+    padding-bottom: 10px
+    
+.item-price
+    font-weight: bold
+ 
+.item-remove
+    flex:30%
+    top:50% 
+    cursor: pointer
+    text-align: center
+    align-self: center
+    font-weight: bold
+.item-img
+    flex: 30%
+.qty-input
+    width: 20px
+    margin: 10px
+    text-align: center
+
+.item-sp
+    font-weight: bold
+.item-price
+    color: darkgray
+    text-decoration: line-through
+.item-discount
+    color: green
+
+.qty-buttons
+    background: none
+    border: none
+    font-size: 16px
+    cursor: pointer
+@media screen and (max-width: 780px) 
+  .item-details 
+    flex-direction: column  
+  .qty-box
+    align-self: start
+    text-align: start
+    padding-left: 10px
+  .item-remove
+    align-self: start
+    text-align: start
+    padding-left: 10px

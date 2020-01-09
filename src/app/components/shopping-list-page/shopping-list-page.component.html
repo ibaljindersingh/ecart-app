@@ -1,0 +1,40 @@
+    
+    <div class="column content-area">
+        <app-header (onSearchText)="onSearchText($event)" [searchText]="searchText"></app-header>
+        
+        <div class="row list-area">       
+            
+            <div class="filter-area">
+                
+                <app-filter (onFilterChanged)="onFilterChanged($event)">
+                    
+                    
+                </app-filter>
+            </div>
+            
+            <div class="column shopping-list-area">
+                
+                
+                <div class="sort-area">
+                    
+                    <app-sort (onSortingChanged)="onSortingChanged($event)" 
+                    (applyFilter)="onFilterChanged($event)"
+                    ></app-sort>
+                    
+                </div>
+                
+                <div class="item-list-area">
+                    
+                    <app-shopping-list [itemList]="filteredItemList"></app-shopping-list>
+                    <h2 class="no-data-found" *ngIf="filteredItemList.length==0">No Data Found</h2>
+                </div>
+                
+                
+            </div>
+            
+            
+        </div>   
+        <div  class="footer"><app-footer></app-footer></div>
+    </div>
+    
+    

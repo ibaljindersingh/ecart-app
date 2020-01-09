@@ -1,0 +1,6 @@
+<div class="header-content row">
+
+
+    <app-search class="pr-10" (onSearchText)="onSearch($event)" [searchText]="searchText"></app-search>
+    <app-cart-icon class="pr-10" *ngIf="!hideCartIcon" (click)="navigateToCart()"></app-cart-icon>
+<div>

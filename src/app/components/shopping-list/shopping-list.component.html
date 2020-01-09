@@ -1,0 +1,12 @@
+<div class="list-content">
+    
+    <div *ngFor="let item of itemList" >
+        <app-item [itemModel]="item" (onAddToCart)="onAddToCart($event)"></app-item>
+
+    </div>
+
+
+    <span id="snackbar">Item Added to cart</span>
+
+
+</div>

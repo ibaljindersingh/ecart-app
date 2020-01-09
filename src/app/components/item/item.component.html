@@ -1,0 +1,23 @@
+<div class="item-content">
+    
+    <div>
+        <img src="{{itemModel.img_url}}" height="200px" width="100%"/>
+    </div>
+    <div class="item-name">
+
+        {{itemModel.name}}
+    </div>
+
+    <div class="price-details row">
+        <span class="item-sp">&#8377;{{itemModel.selling_price}} </span>
+        <span class="item-price">&#8377;{{itemModel.price}} </span>
+        <span class="item-discount">{{itemModel.discount}} % Off </span>
+    </div>
+
+    
+
+    <div class="row add-to-cart-button-wrapper">
+        <button type="text" (click)="addToCart()" class="add-to-cart-button">Add to cart</button>
+    </div>
+    
+</div>
