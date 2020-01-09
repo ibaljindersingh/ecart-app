@@ -14,8 +14,7 @@ export class SortComponent implements OnInit {
   @Output() applyFilter = new EventEmitter<any>();
   
   
-  sortModal:GlobalEventHandlers
-  filterModal:GlobalEventHandlers
+  
   sortType: any;
   
   constructor(private commonService:CommonService) { }
@@ -52,37 +51,41 @@ export class SortComponent implements OnInit {
   applySort(){
     this.onSortingChanged.emit(this.sortType);
     this.commonService.setSortType(this.sortType)
-    this.sortModal.style.display = "none";
+    var sortModal = document.getElementById("sort-modal");      
+    sortModal.style.display = "none";
   }
   
   dismissSortPopup(){
-    this.sortModal.style.display = "none";
+    var sortModal = document.getElementById("sort-modal");      
+    sortModal.style.display = "none";
   }
   
   openSortPopUp(){
-    this.sortModal = document.getElementById("sort-modal");      
-    this.sortModal.style.display = "block";
+    var sortModal = document.getElementById("sort-modal");      
+    sortModal.style.display = "block";
     window.onclick = function(event) {
-      if (event.target == this.sortModal) {
-        this.sortModal.style.display = "none";
+      if (event.target == sortModal) {
+        sortModal.style.display = "none";
       }
     }
   }
   
   openfilters(){
     
-    this.filterModal = document.getElementById("filter-modal");    
-    this.filterModal.style.display = "block";
+    var filterModal = document.getElementById("filter-modal");    
+    filterModal.style.display = "block";
     window.onclick = function(event) {
-      if (event.target == this.filterModal) {
-        this.filterModal.style.display = "none";
+      if (event.target == filterModal) {
+        filterModal.style.display = "none";
       }
     }
   }
   
   onFilterChanged(event){
     
+    var filterModal = document.getElementById("filter-modal");    
     this.applyFilter.emit(event);
-    this.filterModal.style.display = "none";
+    filterModal.style.display = "none";
+    
   }
 }
