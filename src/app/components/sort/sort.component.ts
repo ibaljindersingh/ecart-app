@@ -12,11 +12,7 @@ export class SortComponent implements OnInit {
   faFilter=faFilter;
   @Output() onSortingChanged = new EventEmitter<any>();
   @Output() applyFilter = new EventEmitter<any>();
-  
-  
-  
-  sortType: any;
-  
+  sortType: any; 
   constructor(private commonService:CommonService) { }
   
   ngOnInit() {
