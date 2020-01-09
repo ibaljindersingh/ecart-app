@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   
-  private checkoutItemList:CartModel[]=[]
+  checkoutItemList:CartModel[]=[]
   filteredItemList:CartModel[];
 
   
