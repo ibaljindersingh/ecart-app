@@ -1,6 +1,11 @@
 <div class="header-content row">
-
-
-    <app-search class="pr-10" (onSearchText)="onSearch($event)" [searchText]="searchText"></app-search>
-    <app-cart-icon class="pr-10" *ngIf="!hideCartIcon" (click)="navigateToCart()"></app-cart-icon>
-<div>
+    
+    <div class="row start-icon" (click)="swithcToHome()">
+        <img src="../../../assets/star.png" width="20px" height="20px"/>
+    </div>
+    
+    <div class="row cart-content">
+        <app-search class="pr-10" (onSearchText)="onSearch($event)" [searchText]="searchText"></app-search>
+        <app-cart-icon class="pr-10" *ngIf="!hideCartIcon" (click)="navigateToCart()"></app-cart-icon>
+    </div>
+    <div>

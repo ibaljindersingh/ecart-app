@@ -27,5 +27,9 @@ export class HeaderComponent implements OnInit {
       this.onSearchText.emit(event)
 
     }
+
+    swithcToHome(){
+      this.router.navigateByUrl('/')
+    }
   }
   
