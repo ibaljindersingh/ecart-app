@@ -1,3 +1,5 @@
+
+
 .item-content
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2)
   border: 1px solid #ccc
@@ -59,13 +61,14 @@
     font-size: 16px
     cursor: pointer
 @media screen and (max-width: 780px) 
-  .item-details 
+%media-780
+    align-self: start
+    text-align: start
+    padding-left: 10px
+.item-details 
     flex-direction: column  
-  .qty-box
-    align-self: start
-    text-align: start
-    padding-left: 10px
-  .item-remove
-    align-self: start
-    text-align: start
-    padding-left: 10px
+.qty-box
+    @extend %media-780
+.item-remove
+    @extend %media-780
+

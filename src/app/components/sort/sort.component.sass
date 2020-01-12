@@ -1,3 +1,5 @@
+$primary-color:#4269EA
+
 /* The Modal (background) */
 %modal 
   display: none 
@@ -19,6 +21,16 @@
   border: 1px solid #888
   width: 80%
 
+%icon-style
+  align-self: center
+  padding:0px 2px 0px 5px
+
+%pop-up-button-class
+    flex:50%
+    text-align: center
+    display: flex
+    justify-content: center
+    cursor: pointer
 .sortModal
     @extend %modal
         
@@ -31,47 +43,44 @@
 .filterModalContent
     @extend %modal-content
 
+.filter-icon
+    @extend %icon-style
+    font-size: 12px
+
+.sort-icon
+    @extend %icon-style
+    font-size: 18px
+
+
+.pop-up-apply-button
+    @extend %pop-up-button-class
+    border-left: 1px solid darkgray
+
+.pop-up-cancel-button
+    @extend %pop-up-button-class
+
+
 .sort-content
     padding:10px
-
 
 /* Style the tab */
 .tab 
   overflow: hidden
   align-self: center
   padding-left: 10px
-
-
-/* Style the buttons inside the tab */
-.tab button 
-  background-color: inherit
-  float: left
-  border: none
-  outline: none
-  cursor: pointer
-  padding: 14px 16px
-  transition: 0.3s
-
-
-/* Change background color of buttons on hover */
-.tab button:hover 
-    color: #4269EA
-
-/* Create an active/current tablink class */
-.tab button.active 
-    border-bottom: 3px solid #4269EA
-    color: blue
-
-.filter-icon
-    align-self: center
-    font-size: 12px
-    padding:0px 2px 0px 5px
-    
-
-.sort-icon
-    align-self: center
-    font-size: 18px
-    padding:0px 2px 0px 5px
+  button 
+    background-color: inherit
+    float: left
+    border: none
+    outline: none
+    cursor: pointer
+    padding: 14px 16px
+    transition: 0.3s
+    &:hover
+        color: $primary-color
+    &.active
+        border-bottom: 3px solid $primary-color
+        color: blue
 
 .mobile-sort
     display: none
@@ -85,49 +94,18 @@
     font-size: 16px
 
 .pop-up-buttons
-    color: #4269EA
+    color: $primary-color
     text-align: center
     font-size: 18px
     font-weight: bold
     background: none
     border: none
 
-
 .pop-up-buttons-wrapper
     height: 40px
     border: 1px solid darkgray
     margin-top: 20px
-
-.pop-up-apply-button
-    flex:50%
-    text-align: center
-    display: flex
-    justify-content: center
-    cursor: pointer
-    border-left: 1px solid darkgray
-
-.pop-up-cancel-button
-    flex:50%
-    text-align: center
-    display: flex
-    justify-content: center
-    cursor: pointer
-    
-//  The Close Button 
-//     .close 
-//     color: #aaaaaa
-//     float: right
-//     font-size: 28px
-//     font-weight: bold
-
-
-//     .close:hover,
-//     .close:focus 
-//     color: #000
-//     text-decoration: none
-//     cursor: pointer 
-
-
+   
 
 @media screen and (max-width: 780px) 
   .desktop-sort

@@ -1,25 +1,19 @@
 
-.content-area
- 
-    position: absolute
+%area
     top: 0
     bottom: 0
     left: 0
+.content-area
+    @extend %area
+    position: absolute
     overflow: hidden
     min-width: 100%
 
-
-
 .list-area
- 
-    top: 0
-    bottom: 0
-    left: 0
+    @extend %area
     width: 100% 
     flex:60%
     overflow: auto
-    
-
 
 .filter-area
     flex:20%  
@@ -39,7 +33,6 @@
     overflow: auto
     min-height: 0
 .footer
-  
     overflow: hidden
     height: 35px
 @media screen and (max-width: 780px) 

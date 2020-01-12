@@ -1,14 +1,26 @@
-.container
-    position: absolute
+%price-class
+    text-align: justify
+    padding: 10px
+    justify-content: space-between  
+
+%container-class
     top: 0
     bottom: 0
     left: 0
+.price-calc
+    @extend %price-class
+
+.price-total
+    @extend %price-class
+    font-weight: bold
+    border-top: 1px solid darkgray    
+.container
+    @extend %container-class
+    position: absolute
     overflow: hidden
     width: 100%
 .checkout-page-container
-    top: 0
-    bottom: 0
-    left: 0
+    @extend %container-class
     width: 100% 
     flex:60%
     flex-grow: 1
@@ -20,8 +32,6 @@
     flex-grow: 1
     min-height: 0
     overflow: auto
-
-
 .price-details
     flex: 30%
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2)
@@ -37,7 +47,6 @@
     padding:10px
 
 .footer
-  
     overflow: hidden
     height: 35px
 .apply-button
@@ -54,17 +63,7 @@
     outline: none
     cursor: pointer
 
-.price-calc
-    text-align: justify
-    padding: 10px
-    justify-content: space-between    
 
-.price-total
-    text-align: justify
-    padding: 10px
-    justify-content: space-between  
-    font-weight: bold
-    border-top: 1px solid darkgray
 
 @media screen and (max-width: 780px) 
   .checkout-page-container 
